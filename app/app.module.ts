@@ -25,9 +25,9 @@ import {Register} from "./components/register/register.component";
   ],
   bootstrap: [AppComponent],
   providers: [
-    DaoFactory,
-    //{provide: IISDaoFactory, useClass: MockDaoFactory},
-    {provide: ApiConfig, useClass: LocalApiConfig},
+      DaoFactory,
+      //{provide: IISDaoFactory, useClass: MockDaoFactory},
+      {provide: ApiConfig, useClass: LocalApiConfig},
   ]
 })
 export class AppModule { }

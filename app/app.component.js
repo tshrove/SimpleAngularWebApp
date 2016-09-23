@@ -10,14 +10,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
+    /**
+     * Default Constructor
+     */
     function AppComponent() {
+        this._showMenu = true;
     }
+    Object.defineProperty(AppComponent.prototype, "showMenu", {
+        /**
+         * Gets the whether the menu should be showing or not.
+         * @returns {boolean}
+         */
+        get: function () {
+            return this._showMenu;
+        },
+        /**
+         * Sets whether the menu is showing or not.
+         * @param bShow
+         */
+        set: function (bShow) {
+            this._showMenu = bShow;
+        },
+        enumerable: true,
+        configurable: true
+    });
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            //templateUrl: './app.template.html'
             templateUrl: 'app/app.template.html'
-        }), 
+        }),
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
