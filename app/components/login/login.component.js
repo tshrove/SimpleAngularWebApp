@@ -9,18 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var Login = (function () {
+    /**
+     * Default constructor
+     */
+    function Login() {
     }
-    AppComponent = __decorate([
+    /**
+     * Initialize after the constructor
+     */
+    Login.prototype.ngOnInit = function () {
+    };
+    Login = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            //templateUrl: './app.template.html'
-            templateUrl: 'app/app.template.html'
+            selector: 'login-view',
+            templateUrl: 'app/components/login/login.template.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], Login);
+    return Login;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.Login = Login;
+//# sourceMappingURL=login.component.js.map

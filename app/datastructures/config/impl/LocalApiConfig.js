@@ -9,18 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var LocalApiConfig = (function () {
+    function LocalApiConfig() {
+        //@TODO change to match the actual server url
+        this._domain = "http://localhost:3000";
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            //templateUrl: './app.template.html'
-            templateUrl: 'app/app.template.html'
-        }), 
+    Object.defineProperty(LocalApiConfig.prototype, "domain", {
+        get: function () {
+            return this._domain;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    LocalApiConfig = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], LocalApiConfig);
+    return LocalApiConfig;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.LocalApiConfig = LocalApiConfig;
+//# sourceMappingURL=LocalApiConfig.js.map

@@ -8,19 +8,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var UserDao_1 = require("./UserDao");
+var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var ApiConfig_1 = require("../../config/impl/ApiConfig");
+/**
+ * Holds all the Dao implementations.
+ */
+var DaoFactory = (function () {
+    function DaoFactory(http, apiConfig) {
+        this._http = http;
+        this._apiConfig = apiConfig;
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            //templateUrl: './app.template.html'
-            templateUrl: 'app/app.template.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    /**
+     * Gets the Dao for the API
+     */
+    DaoFactory.prototype.getUserDao = function () {
+        return new UserDao_1.UserDao();
+    };
+    DaoFactory = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http, ApiConfig_1.ApiConfig])
+    ], DaoFactory);
+    return DaoFactory;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.DaoFactory = DaoFactory;
+//# sourceMappingURL=DaoFactory.js.map

@@ -9,18 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+/**
+ * The class that interfaces with the API in order to
+ * retrieve information given to and received from the API.
+ */
+var UserDao = (function () {
+    /**
+     * Default Constructor
+     */
+    function UserDao() {
+        // To Do
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            //templateUrl: './app.template.html'
-            templateUrl: 'app/app.template.html'
-        }), 
+    UserDao = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], UserDao);
+    return UserDao;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.UserDao = UserDao;
+//# sourceMappingURL=UserDao.js.map
